@@ -1,0 +1,869 @@
+Listado de rutas de carpetas
+El n£mero de serie del volumen es 326A-6C89
+C:.
+ÃÄÄÄ.wwebjs_auth
+³   ÀÄÄÄsession
+³       ÃÄÄÄCrashpad
+³       ÀÄÄÄDefault
+³           ÃÄÄÄCache
+³           ³   ÀÄÄÄCache_Data
+³           ÃÄÄÄCode Cache
+³           ³   ÃÄÄÄjs
+³           ³   ³   ÀÄÄÄindex-dir
+³           ³   ÀÄÄÄwasm
+³           ³       ÀÄÄÄindex-dir
+³           ÃÄÄÄdatabases
+³           ÃÄÄÄDawnCache
+³           ÃÄÄÄGPUCache
+³           ÃÄÄÄIndexedDB
+³           ³   ÀÄÄÄhttps_web.whatsapp.com_0.indexeddb.leveldb
+³           ÃÄÄÄLocal Storage
+³           ³   ÀÄÄÄleveldb
+³           ÃÄÄÄService Worker
+³           ³   ÃÄÄÄCacheStorage
+³           ³   ³   ÀÄÄÄ0bf6ab7f94a21cdc9c1649f884333ec20f40a544
+³           ³   ³       ÃÄÄÄ2ca2bfa5-0aed-4f2c-a9fe-ffd93d7bd2a3
+³           ³   ³       ³   ÀÄÄÄindex-dir
+³           ³   ³       ÃÄÄÄ30144510-dbe9-4d58-800e-b49eb15deccf
+³           ³   ³       ³   ÀÄÄÄindex-dir
+³           ³   ³       ÀÄÄÄe0e2ba0e-36e0-4212-9c14-01fc9acd007d
+³           ³   ³           ÀÄÄÄindex-dir
+³           ³   ÃÄÄÄDatabase
+³           ³   ÀÄÄÄScriptCache
+³           ³       ÀÄÄÄindex-dir
+³           ÃÄÄÄSession Storage
+³           ÃÄÄÄshared_proto_db
+³           ³   ÀÄÄÄmetadata
+³           ÃÄÄÄVideoDecodeStats
+³           ÀÄÄÄWebStorage
+ÃÄÄÄ.wwebjs_cache
+ÃÄÄÄfacturas
+ÃÄÄÄnode_modules
+³   ÃÄÄÄ.bin
+³   ÃÄÄÄ@google
+³   ³   ÀÄÄÄgenerative-ai
+³   ³       ÃÄÄÄdist
+³   ³       ³   ÃÄÄÄscripts
+³   ³       ³   ÃÄÄÄserver
+³   ³       ³   ³   ÃÄÄÄscripts
+³   ³       ³   ³   ÃÄÄÄsrc
+³   ³       ³   ³   ³   ÃÄÄÄmethods
+³   ³       ³   ³   ³   ÃÄÄÄmodels
+³   ³       ³   ³   ³   ÃÄÄÄrequests
+³   ³       ³   ³   ³   ÀÄÄÄserver
+³   ³       ³   ³   ÀÄÄÄtypes
+³   ³       ³   ³       ÀÄÄÄserver
+³   ³       ³   ÃÄÄÄsrc
+³   ³       ³   ³   ÃÄÄÄmethods
+³   ³       ³   ³   ÃÄÄÄmodels
+³   ³       ³   ³   ÃÄÄÄrequests
+³   ³       ³   ³   ÀÄÄÄserver
+³   ³       ³   ÀÄÄÄtypes
+³   ³       ³       ÀÄÄÄserver
+³   ³       ÀÄÄÄserver
+³   ÃÄÄÄ@google-cloud
+³   ³   ÀÄÄÄvertexai
+³   ³       ÃÄÄÄ.github
+³   ³       ³   ÀÄÄÄworkflows
+³   ³       ÃÄÄÄ.kokoro
+³   ³       ³   ÃÄÄÄpresubmit
+³   ³       ³   ³   ÀÄÄÄnode18
+³   ³       ³   ÀÄÄÄrelease
+³   ³       ÃÄÄÄbuild
+³   ³       ³   ÃÄÄÄsrc
+³   ³       ³   ³   ÃÄÄÄfunctions
+³   ³       ³   ³   ³   ÀÄÄÄtest
+³   ³       ³   ³   ÃÄÄÄmodels
+³   ³       ³   ³   ³   ÀÄÄÄtest
+³   ³       ³   ³   ÃÄÄÄresources
+³   ³       ³   ³   ³   ÀÄÄÄshared
+³   ³       ³   ³   ÃÄÄÄtesting
+³   ³       ³   ³   ÃÄÄÄtypes
+³   ³       ³   ³   ÀÄÄÄutil
+³   ³       ³   ÃÄÄÄsystem_test
+³   ³       ³   ÀÄÄÄtest
+³   ³       ÃÄÄÄsdk_schema_test
+³   ³       ³   ÃÄÄÄgoogle_ai
+³   ³       ³   ÃÄÄÄutils
+³   ³       ³   ÀÄÄÄvertex_ai
+³   ³       ÃÄÄÄsrc
+³   ³       ³   ÃÄÄÄfunctions
+³   ³       ³   ³   ÀÄÄÄtest
+³   ³       ³   ÃÄÄÄmodels
+³   ³       ³   ³   ÀÄÄÄtest
+³   ³       ³   ÃÄÄÄresources
+³   ³       ³   ³   ÀÄÄÄshared
+³   ³       ³   ÃÄÄÄtesting
+³   ³       ³   ÃÄÄÄtypes
+³   ³       ³   ÀÄÄÄutil
+³   ³       ÃÄÄÄsystem_test
+³   ³       ÀÄÄÄtest
+³   ³           ÀÄÄÄspec
+³   ÃÄÄÄ@puppeteer
+³   ÃÄÄÄ@swc
+³   ³   ÀÄÄÄhelpers
+³   ³       ÃÄÄÄlib
+³   ³       ÃÄÄÄscripts
+³   ³       ÀÄÄÄsrc
+³   ÃÄÄÄ@tootallnate
+³   ÃÄÄÄ@types
+³   ³   ÃÄÄÄdebug
+³   ³   ÃÄÄÄms
+³   ³   ÃÄÄÄnode
+³   ³   ³   ÃÄÄÄassert
+³   ³   ³   ÃÄÄÄcompatibility
+³   ³   ³   ÃÄÄÄdns
+³   ³   ³   ÃÄÄÄfs
+³   ³   ³   ÃÄÄÄreadline
+³   ³   ³   ÃÄÄÄstream
+³   ³   ³   ÃÄÄÄtimers
+³   ³   ³   ÃÄÄÄts5.6
+³   ³   ³   ³   ÀÄÄÄcompatibility
+³   ³   ³   ÃÄÄÄts5.7
+³   ³   ³   ³   ÀÄÄÄcompatibility
+³   ³   ³   ÀÄÄÄweb-globals
+³   ³   ÀÄÄÄvalidator
+³   ³       ÃÄÄÄes
+³   ³       ³   ÀÄÄÄlib
+³   ³       ÀÄÄÄlib
+³   ÃÄÄÄaccepts
+³   ÃÄÄÄagent-base
+³   ³   ÀÄÄÄdist
+³   ÃÄÄÄappend-field
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄarray-buffer-byte-length
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄarray-flatten
+³   ÃÄÄÄasynckit
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄavailable-typed-arrays
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄaws-ssl-profiles
+³   ³   ÀÄÄÄlib
+³   ³       ÃÄÄÄ@types
+³   ³       ÀÄÄÄprofiles
+³   ³           ÀÄÄÄca
+³   ÃÄÄÄaxios
+³   ³   ÃÄÄÄdist
+³   ³   ³   ÃÄÄÄbrowser
+³   ³   ³   ÃÄÄÄesm
+³   ³   ³   ÀÄÄÄnode
+³   ³   ÀÄÄÄlib
+³   ³       ÃÄÄÄadapters
+³   ³       ÃÄÄÄcancel
+³   ³       ÃÄÄÄcore
+³   ³       ÃÄÄÄdefaults
+³   ³       ÃÄÄÄenv
+³   ³       ³   ÀÄÄÄclasses
+³   ³       ÃÄÄÄhelpers
+³   ³       ÀÄÄÄplatform
+³   ³           ÃÄÄÄbrowser
+³   ³           ³   ÀÄÄÄclasses
+³   ³           ÃÄÄÄcommon
+³   ³           ÀÄÄÄnode
+³   ³               ÀÄÄÄclasses
+³   ÃÄÄÄbase64-js
+³   ÃÄÄÄbcryptjs
+³   ³   ÃÄÄÄ.vscode
+³   ³   ÃÄÄÄbin
+³   ³   ÃÄÄÄdist
+³   ³   ÃÄÄÄexterns
+³   ³   ÃÄÄÄscripts
+³   ³   ÃÄÄÄsrc
+³   ³   ³   ÀÄÄÄbcrypt
+³   ³   ³       ÃÄÄÄprng
+³   ³   ³       ÀÄÄÄutil
+³   ³   ÀÄÄÄtests
+³   ÃÄÄÄbignumber.js
+³   ³   ÀÄÄÄdoc
+³   ÃÄÄÄbody-parser
+³   ³   ÀÄÄÄlib
+³   ³       ÀÄÄÄtypes
+³   ÃÄÄÄbrotli
+³   ³   ÃÄÄÄbuild
+³   ³   ÃÄÄÄdec
+³   ³   ÀÄÄÄenc
+³   ÃÄÄÄbuffer-equal-constant-time
+³   ÃÄÄÄbuffer-from
+³   ÃÄÄÄbusboy
+³   ³   ÃÄÄÄ.github
+³   ³   ³   ÀÄÄÄworkflows
+³   ³   ÃÄÄÄbench
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÀÄÄÄtypes
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄbytes
+³   ÃÄÄÄcall-bind
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄcall-bind-apply-helpers
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄcall-bound
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄclone
+³   ÃÄÄÄcloudinary
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÃÄÄÄanalysis
+³   ³   ³   ÃÄÄÄapi_client
+³   ³   ³   ÃÄÄÄcache
+³   ³   ³   ÃÄÄÄprovisioning
+³   ³   ³   ÃÄÄÄutils
+³   ³   ³   ³   ÃÄÄÄanalytics
+³   ³   ³   ³   ÃÄÄÄencoding
+³   ³   ³   ³   ÀÄÄÄparsing
+³   ³   ³   ÀÄÄÄv2
+³   ³   ÀÄÄÄtypes
+³   ÃÄÄÄcombined-stream
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄconcat-stream
+³   ÃÄÄÄcontent-disposition
+³   ÃÄÄÄcontent-type
+³   ÃÄÄÄcookie
+³   ÃÄÄÄcookie-signature
+³   ÃÄÄÄcore-util-is
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄcors
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄcrypto-js
+³   ³   ÀÄÄÄdocs
+³   ÃÄÄÄdebug
+³   ³   ÀÄÄÄsrc
+³   ÃÄÄÄdeep-equal
+³   ³   ÃÄÄÄexample
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄdefine-data-property
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄdefine-properties
+³   ³   ÀÄÄÄ.github
+³   ÃÄÄÄdelayed-stream
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄdenque
+³   ÃÄÄÄdepd
+³   ³   ÀÄÄÄlib
+³   ³       ÀÄÄÄbrowser
+³   ÃÄÄÄdestroy
+³   ÃÄÄÄdfa
+³   ÃÄÄÄdotenv
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄdottie
+³   ÃÄÄÄdunder-proto
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄecdsa-sig-formatter
+³   ³   ÀÄÄÄsrc
+³   ÃÄÄÄee-first
+³   ÃÄÄÄencodeurl
+³   ÃÄÄÄes-define-property
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄes-errors
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄes-get-iterator
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄes-object-atoms
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄes-set-tostringtag
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄescape-html
+³   ÃÄÄÄetag
+³   ÃÄÄÄexpress
+³   ³   ÀÄÄÄlib
+³   ³       ÃÄÄÄmiddleware
+³   ³       ÀÄÄÄrouter
+³   ÃÄÄÄextend
+³   ÃÄÄÄfinalhandler
+³   ÃÄÄÄfollow-redirects
+³   ÃÄÄÄfontkit
+³   ³   ÃÄÄÄdist
+³   ³   ÀÄÄÄsrc
+³   ³       ÃÄÄÄaat
+³   ³       ÃÄÄÄcff
+³   ³       ÃÄÄÄglyph
+³   ³       ÃÄÄÄlayout
+³   ³       ÃÄÄÄopentype
+³   ³       ³   ÀÄÄÄshapers
+³   ³       ÃÄÄÄsubset
+³   ³       ÀÄÄÄtables
+³   ÃÄÄÄfor-each
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄform-data
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄforwarded
+³   ÃÄÄÄfresh
+³   ÃÄÄÄfunction-bind
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄfunctions-have-names
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄgaxios
+³   ³   ÃÄÄÄbuild
+³   ³   ³   ÀÄÄÄsrc
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÃÄÄÄ.bin
+³   ³       ÀÄÄÄuuid
+³   ³           ÀÄÄÄdist
+³   ³               ÃÄÄÄbin
+³   ³               ÃÄÄÄcommonjs-browser
+³   ³               ÃÄÄÄesm-browser
+³   ³               ÀÄÄÄesm-node
+³   ÃÄÄÄgcp-metadata
+³   ³   ÀÄÄÄbuild
+³   ³       ÀÄÄÄsrc
+³   ÃÄÄÄgenerate-function
+³   ÃÄÄÄget-intrinsic
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄget-proto
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄgoogle-auth-library
+³   ³   ÃÄÄÄbuild
+³   ³   ³   ÀÄÄÄsrc
+³   ³   ³       ÃÄÄÄauth
+³   ³   ³       ÀÄÄÄcrypto
+³   ³   ³           ÃÄÄÄbrowser
+³   ³   ³           ÀÄÄÄnode
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÃÄÄÄjwa
+³   ³       ÀÄÄÄjws
+³   ³           ÀÄÄÄlib
+³   ÃÄÄÄgoogle-logging-utils
+³   ³   ÀÄÄÄbuild
+³   ³       ÀÄÄÄsrc
+³   ÃÄÄÄgopd
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄgtoken
+³   ³   ÃÄÄÄbuild
+³   ³   ³   ÀÄÄÄsrc
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÃÄÄÄjwa
+³   ³       ÀÄÄÄjws
+³   ³           ÀÄÄÄlib
+³   ÃÄÄÄhas-bigints
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄhas-property-descriptors
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄhas-symbols
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ³       ÀÄÄÄshams
+³   ÃÄÄÄhas-tostringtag
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ³       ÀÄÄÄshams
+³   ÃÄÄÄhasown
+³   ³   ÀÄÄÄ.github
+³   ÃÄÄÄhttp-errors
+³   ÃÄÄÄhttps-proxy-agent
+³   ³   ÃÄÄÄdist
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÃÄÄÄdebug
+³   ³       ³   ÀÄÄÄsrc
+³   ³       ÀÄÄÄms
+³   ÃÄÄÄiconv-lite
+³   ³   ÃÄÄÄencodings
+³   ³   ³   ÀÄÄÄtables
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄinflection
+³   ³   ÃÄÄÄ.vscode
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄinherits
+³   ÃÄÄÄinternal-slot
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄipaddr.js
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄis-arguments
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-array-buffer
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-bigint
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-boolean-object
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-callable
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-date-object
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-map
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-number-object
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-property
+³   ÃÄÄÄis-regex
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-set
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-shared-array-buffer
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-stream
+³   ÃÄÄÄis-string
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-symbol
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-weakmap
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄis-weakset
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄisarray
+³   ÃÄÄÄjpeg-exif
+³   ³   ÃÄÄÄlib
+³   ³   ÃÄÄÄsrc
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄjson-bigint
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄjsonwebtoken
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÀÄÄÄms
+³   ÃÄÄÄjwa
+³   ÃÄÄÄjws
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄlinebreak
+³   ³   ÃÄÄÄdist
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÀÄÄÄbase64-js
+³   ³           ÃÄÄÄbench
+³   ³           ÃÄÄÄlib
+³   ³           ÀÄÄÄtest
+³   ÃÄÄÄlodash
+³   ³   ÀÄÄÄfp
+³   ÃÄÄÄlodash.includes
+³   ÃÄÄÄlodash.isboolean
+³   ÃÄÄÄlodash.isinteger
+³   ÃÄÄÄlodash.isnumber
+³   ÃÄÄÄlodash.isplainobject
+³   ÃÄÄÄlodash.isstring
+³   ÃÄÄÄlodash.once
+³   ÃÄÄÄlong
+³   ³   ÀÄÄÄumd
+³   ÃÄÄÄlru-cache
+³   ÃÄÄÄlru.min
+³   ³   ÃÄÄÄbrowser
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄmath-intrinsics
+³   ³   ÃÄÄÄ.github
+³   ³   ÃÄÄÄconstants
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄmedia-typer
+³   ÃÄÄÄmerge-descriptors
+³   ÃÄÄÄmethods
+³   ÃÄÄÄmime-db
+³   ÃÄÄÄmime-types
+³   ÃÄÄÄminimist
+³   ³   ÃÄÄÄ.github
+³   ³   ÃÄÄÄexample
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄmkdirp
+³   ³   ÀÄÄÄbin
+³   ÃÄÄÄmoment
+³   ³   ÃÄÄÄdist
+³   ³   ³   ÀÄÄÄlocale
+³   ³   ÃÄÄÄlocale
+³   ³   ÃÄÄÄmin
+³   ³   ÃÄÄÄsrc
+³   ³   ³   ÃÄÄÄlib
+³   ³   ³   ³   ÃÄÄÄcreate
+³   ³   ³   ³   ÃÄÄÄduration
+³   ³   ³   ³   ÃÄÄÄformat
+³   ³   ³   ³   ÃÄÄÄlocale
+³   ³   ³   ³   ÃÄÄÄmoment
+³   ³   ³   ³   ÃÄÄÄparse
+³   ³   ³   ³   ÃÄÄÄunits
+³   ³   ³   ³   ÀÄÄÄutils
+³   ³   ³   ÀÄÄÄlocale
+³   ³   ÀÄÄÄts3.1-typings
+³   ÃÄÄÄmoment-timezone
+³   ³   ÃÄÄÄbuilds
+³   ³   ÀÄÄÄdata
+³   ³       ÃÄÄÄmeta
+³   ³       ÀÄÄÄpacked
+³   ÃÄÄÄms
+³   ÃÄÄÄmulter
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄstorage
+³   ÃÄÄÄmysql2
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÃÄÄÄauth_plugins
+³   ³   ³   ÃÄÄÄbase
+³   ³   ³   ÃÄÄÄcommands
+³   ³   ³   ÃÄÄÄconstants
+³   ³   ³   ÃÄÄÄpackets
+³   ³   ³   ÃÄÄÄparsers
+³   ³   ³   ÀÄÄÄpromise
+³   ³   ÃÄÄÄnode_modules
+³   ³   ³   ÀÄÄÄiconv-lite
+³   ³   ³       ÃÄÄÄencodings
+³   ³   ³       ³   ÀÄÄÄtables
+³   ³   ³       ÀÄÄÄlib
+³   ³   ³           ÀÄÄÄhelpers
+³   ³   ÀÄÄÄtypings
+³   ³       ÀÄÄÄmysql
+³   ³           ÀÄÄÄlib
+³   ³               ÃÄÄÄconstants
+³   ³               ÃÄÄÄparsers
+³   ³               ÀÄÄÄprotocol
+³   ³                   ÃÄÄÄpackets
+³   ³                   ³   ÀÄÄÄparams
+³   ³                   ÀÄÄÄsequences
+³   ³                       ÀÄÄÄpromise
+³   ÃÄÄÄnamed-placeholders
+³   ÃÄÄÄnegotiator
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄnode-cron
+³   ³   ÃÄÄÄ.circleci
+³   ³   ÃÄÄÄ.github
+³   ³   ÃÄÄÄsrc
+³   ³   ³   ÃÄÄÄbackground-scheduled-task
+³   ³   ³   ÀÄÄÄconvert-expression
+³   ³   ÀÄÄÄtest
+³   ³       ÃÄÄÄassets
+³   ³       ÃÄÄÄconvert-expression
+³   ³       ÀÄÄÄpattern-validation
+³   ÃÄÄÄnode-fetch
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄnodemailer
+³   ³   ÀÄÄÄlib
+³   ³       ÃÄÄÄaddressparser
+³   ³       ÃÄÄÄbase64
+³   ³       ÃÄÄÄdkim
+³   ³       ÃÄÄÄfetch
+³   ³       ÃÄÄÄjson-transport
+³   ³       ÃÄÄÄmail-composer
+³   ³       ÃÄÄÄmailer
+³   ³       ÃÄÄÄmime-funcs
+³   ³       ÃÄÄÄmime-node
+³   ³       ÃÄÄÄpunycode
+³   ³       ÃÄÄÄqp
+³   ³       ÃÄÄÄsendmail-transport
+³   ³       ÃÄÄÄses-transport
+³   ³       ÃÄÄÄshared
+³   ³       ÃÄÄÄsmtp-connection
+³   ³       ÃÄÄÄsmtp-pool
+³   ³       ÃÄÄÄsmtp-transport
+³   ³       ÃÄÄÄstream-transport
+³   ³       ÃÄÄÄwell-known
+³   ³       ÀÄÄÄxoauth2
+³   ÃÄÄÄobject-assign
+³   ÃÄÄÄobject-inspect
+³   ³   ÃÄÄÄ.github
+³   ³   ÃÄÄÄexample
+³   ³   ÀÄÄÄtest
+³   ³       ÀÄÄÄbrowser
+³   ÃÄÄÄobject-is
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄobject-keys
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄobject.assign
+³   ³   ÃÄÄÄ.github
+³   ³   ÃÄÄÄdist
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄon-finished
+³   ÃÄÄÄopenai
+³   ³   ÃÄÄÄbeta
+³   ³   ³   ÀÄÄÄrealtime
+³   ³   ÃÄÄÄbin
+³   ³   ÃÄÄÄcore
+³   ³   ÃÄÄÄhelpers
+³   ³   ÃÄÄÄinternal
+³   ³   ³   ÃÄÄÄdecoders
+³   ³   ³   ÃÄÄÄqs
+³   ³   ³   ÀÄÄÄutils
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÀÄÄÄresponses
+³   ³   ÃÄÄÄrealtime
+³   ³   ÃÄÄÄresources
+³   ³   ³   ÃÄÄÄaudio
+³   ³   ³   ÃÄÄÄbeta
+³   ³   ³   ³   ÃÄÄÄchatkit
+³   ³   ³   ³   ÃÄÄÄrealtime
+³   ³   ³   ³   ÀÄÄÄthreads
+³   ³   ³   ³       ÀÄÄÄruns
+³   ³   ³   ÃÄÄÄchat
+³   ³   ³   ³   ÀÄÄÄcompletions
+³   ³   ³   ÃÄÄÄcontainers
+³   ³   ³   ³   ÀÄÄÄfiles
+³   ³   ³   ÃÄÄÄconversations
+³   ³   ³   ÃÄÄÄevals
+³   ³   ³   ³   ÀÄÄÄruns
+³   ³   ³   ÃÄÄÄfine-tuning
+³   ³   ³   ³   ÃÄÄÄalpha
+³   ³   ³   ³   ÃÄÄÄcheckpoints
+³   ³   ³   ³   ÀÄÄÄjobs
+³   ³   ³   ÃÄÄÄgraders
+³   ³   ³   ÃÄÄÄrealtime
+³   ³   ³   ÃÄÄÄresponses
+³   ³   ³   ÃÄÄÄuploads
+³   ³   ³   ÀÄÄÄvector-stores
+³   ³   ÃÄÄÄsrc
+³   ³   ³   ÃÄÄÄbeta
+³   ³   ³   ³   ÀÄÄÄrealtime
+³   ³   ³   ÃÄÄÄcore
+³   ³   ³   ÃÄÄÄhelpers
+³   ³   ³   ÃÄÄÄinternal
+³   ³   ³   ³   ÃÄÄÄdecoders
+³   ³   ³   ³   ÃÄÄÄqs
+³   ³   ³   ³   ÀÄÄÄutils
+³   ³   ³   ÃÄÄÄlib
+³   ³   ³   ³   ÀÄÄÄresponses
+³   ³   ³   ÃÄÄÄrealtime
+³   ³   ³   ÃÄÄÄresources
+³   ³   ³   ³   ÃÄÄÄaudio
+³   ³   ³   ³   ÃÄÄÄbeta
+³   ³   ³   ³   ³   ÃÄÄÄchatkit
+³   ³   ³   ³   ³   ÃÄÄÄrealtime
+³   ³   ³   ³   ³   ÀÄÄÄthreads
+³   ³   ³   ³   ³       ÀÄÄÄruns
+³   ³   ³   ³   ÃÄÄÄchat
+³   ³   ³   ³   ³   ÀÄÄÄcompletions
+³   ³   ³   ³   ÃÄÄÄcontainers
+³   ³   ³   ³   ³   ÀÄÄÄfiles
+³   ³   ³   ³   ÃÄÄÄconversations
+³   ³   ³   ³   ÃÄÄÄevals
+³   ³   ³   ³   ³   ÀÄÄÄruns
+³   ³   ³   ³   ÃÄÄÄfine-tuning
+³   ³   ³   ³   ³   ÃÄÄÄalpha
+³   ³   ³   ³   ³   ÃÄÄÄcheckpoints
+³   ³   ³   ³   ³   ÀÄÄÄjobs
+³   ³   ³   ³   ÃÄÄÄgraders
+³   ³   ³   ³   ÃÄÄÄrealtime
+³   ³   ³   ³   ÃÄÄÄresponses
+³   ³   ³   ³   ÃÄÄÄuploads
+³   ³   ³   ³   ÀÄÄÄvector-stores
+³   ³   ³   ÀÄÄÄ_vendor
+³   ³   ³       ÃÄÄÄpartial-json-parser
+³   ³   ³       ÀÄÄÄzod-to-json-schema
+³   ³   ³           ÀÄÄÄparsers
+³   ³   ÀÄÄÄ_vendor
+³   ³       ÃÄÄÄpartial-json-parser
+³   ³       ÀÄÄÄzod-to-json-schema
+³   ³           ÀÄÄÄparsers
+³   ÃÄÄÄpako
+³   ³   ÃÄÄÄdist
+³   ³   ÀÄÄÄlib
+³   ³       ÃÄÄÄutils
+³   ³       ÀÄÄÄzlib
+³   ÃÄÄÄparseurl
+³   ÃÄÄÄpath-to-regexp
+³   ÃÄÄÄpdfkit
+³   ³   ÀÄÄÄjs
+³   ³       ÀÄÄÄdata
+³   ÃÄÄÄpg-connection-string
+³   ³   ÀÄÄÄesm
+³   ÃÄÄÄpng-js
+³   ³   ÃÄÄÄexamples
+³   ³   ÃÄÄÄimages
+³   ³   ÀÄÄÄtest
+³   ³       ÃÄÄÄimages
+³   ³       ÀÄÄÄ__snapshots__
+³   ÃÄÄÄpossible-typed-array-names
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄprocess-nextick-args
+³   ÃÄÄÄproxy-addr
+³   ÃÄÄÄproxy-from-env
+³   ÃÄÄÄq
+³   ÃÄÄÄqs
+³   ³   ÃÄÄÄ.github
+³   ³   ÃÄÄÄdist
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄrange-parser
+³   ÃÄÄÄraw-body
+³   ÃÄÄÄreadable-stream
+³   ³   ÃÄÄÄdoc
+³   ³   ³   ÀÄÄÄwg-meetings
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÀÄÄÄinternal
+³   ³   ³       ÀÄÄÄstreams
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÃÄÄÄisarray
+³   ³       ÀÄÄÄsafe-buffer
+³   ÃÄÄÄregexp.prototype.flags
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄrestructure
+³   ³   ÃÄÄÄsrc
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄretry-as-promised
+³   ³   ÃÄÄÄdist
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄsafe-buffer
+³   ÃÄÄÄsafe-regex-test
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄsafer-buffer
+³   ÃÄÄÄsemver
+³   ³   ÃÄÄÄbin
+³   ³   ÃÄÄÄclasses
+³   ³   ÃÄÄÄfunctions
+³   ³   ÃÄÄÄinternal
+³   ³   ÀÄÄÄranges
+³   ÃÄÄÄsend
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÃÄÄÄ.bin
+³   ³       ÃÄÄÄencodeurl
+³   ³       ÃÄÄÄmime
+³   ³       ³   ÀÄÄÄsrc
+³   ³       ÀÄÄÄms
+³   ÃÄÄÄseq-queue
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄsequelize
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÃÄÄÄassociations
+³   ³   ³   ÃÄÄÄdialects
+³   ³   ³   ³   ÃÄÄÄabstract
+³   ³   ³   ³   ³   ÀÄÄÄquery-generator
+³   ³   ³   ³   ÃÄÄÄdb2
+³   ³   ³   ³   ÃÄÄÄmariadb
+³   ³   ³   ³   ÃÄÄÄmssql
+³   ³   ³   ³   ÃÄÄÄmysql
+³   ³   ³   ³   ÃÄÄÄoracle
+³   ³   ³   ³   ÃÄÄÄpostgres
+³   ³   ³   ³   ÃÄÄÄsnowflake
+³   ³   ³   ³   ÀÄÄÄsqlite
+³   ³   ³   ÃÄÄÄerrors
+³   ³   ³   ³   ÃÄÄÄconnection
+³   ³   ³   ³   ÃÄÄÄdatabase
+³   ³   ³   ³   ÀÄÄÄvalidation
+³   ³   ³   ÃÄÄÄgeneric
+³   ³   ³   ÀÄÄÄutils
+³   ³   ÃÄÄÄnode_modules
+³   ³   ³   ÃÄÄÄdebug
+³   ³   ³   ³   ÀÄÄÄsrc
+³   ³   ³   ÀÄÄÄms
+³   ³   ÀÄÄÄtypes
+³   ³       ÃÄÄÄassociations
+³   ³       ÃÄÄÄdialects
+³   ³       ³   ÃÄÄÄabstract
+³   ³       ³   ÃÄÄÄmssql
+³   ³       ³   ÀÄÄÄsqlite
+³   ³       ÃÄÄÄerrors
+³   ³       ³   ÃÄÄÄconnection
+³   ³       ³   ÃÄÄÄdatabase
+³   ³       ³   ÀÄÄÄvalidation
+³   ³       ÃÄÄÄgeneric
+³   ³       ÀÄÄÄutils
+³   ÃÄÄÄsequelize-pool
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtypes
+³   ÃÄÄÄserve-static
+³   ÃÄÄÄset-function-length
+³   ³   ÀÄÄÄ.github
+³   ÃÄÄÄset-function-name
+³   ³   ÀÄÄÄ.github
+³   ÃÄÄÄsetprototypeof
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄside-channel
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄside-channel-list
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄside-channel-map
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄside-channel-weakmap
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄsqlstring
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄstatuses
+³   ÃÄÄÄstop-iteration-iterator
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄstreamsearch
+³   ³   ÃÄÄÄ.github
+³   ³   ³   ÀÄÄÄworkflows
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄstring_decoder
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÀÄÄÄsafe-buffer
+³   ÃÄÄÄtiny-inflate
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄtoidentifier
+³   ÃÄÄÄtoposort-class
+³   ³   ÃÄÄÄbenchmark
+³   ³   ³   ÀÄÄÄ0.3.1
+³   ³   ÀÄÄÄbuild
+³   ÃÄÄÄtr46
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄtslib
+³   ³   ÀÄÄÄmodules
+³   ÃÄÄÄtype-is
+³   ÃÄÄÄtypedarray
+³   ³   ÃÄÄÄexample
+³   ³   ÀÄÄÄtest
+³   ³       ÀÄÄÄserver
+³   ÃÄÄÄundici-types
+³   ÃÄÄÄunicode-properties
+³   ³   ÀÄÄÄdist
+³   ÃÄÄÄunicode-trie
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄunpipe
+³   ÃÄÄÄutil-deprecate
+³   ÃÄÄÄutils-merge
+³   ÃÄÄÄuuid
+³   ³   ÀÄÄÄdist
+³   ³       ÃÄÄÄbin
+³   ³       ÃÄÄÄesm-browser
+³   ³       ÃÄÄÄesm-node
+³   ³       ÀÄÄÄumd
+³   ÃÄÄÄvalidator
+³   ³   ÃÄÄÄes
+³   ³   ³   ÀÄÄÄlib
+³   ³   ³       ÀÄÄÄutil
+³   ³   ÀÄÄÄlib
+³   ³       ÀÄÄÄutil
+³   ÃÄÄÄvary
+³   ÃÄÄÄwebidl-conversions
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄwhatwg-url
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄwhich-boxed-primitive
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄwhich-collection
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄwhich-typed-array
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄwkx
+³   ³   ÃÄÄÄdist
+³   ³   ÀÄÄÄlib
+³   ÀÄÄÄxtend
+ÃÄÄÄpublic
+³   ÃÄÄÄimages
+³   ÀÄÄÄmanual_images
+ÀÄÄÄuploads

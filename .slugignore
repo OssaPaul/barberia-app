@@ -1,0 +1,18 @@
+# Excluir archivos innecesarios para reducir el tamaño del slug
+*.md
+*.markdown
+*.txt
+LICENSE
+.nyc_output
+.github
+docs/
+doc/
+test/
+tests/
+spec/
+example/
+examples/
+
+# Caché y sesiones locales que no deberían estar
+.wwebjs_auth/
+.wwebjs_cache/

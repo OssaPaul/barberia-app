@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Interactivo - BarberFlow+</title>
+    <!-- Chosen Palette: Neutral Gray and Soft Gold -->
+    <!-- Application Structure Plan: Fixed sidebar for primary navigation, a main content area for displaying sections, and a search bar to filter sidebar links. This provides quick, non-linear access to information, which is ideal for a user manual. Step-by-step guides are implemented as interactive accordions to reduce cognitive load. This structure is chosen for its high usability and scan-ability over a linear document. -->
+    <!-- Visualization & Content Choices: 
+        - Manual Sections -> Goal: Organize/Navigate -> Sidebar with links -> Interaction: Click to scroll -> Justification: Fast, persistent navigation -> HTML/JS.
+        - Step-by-step guides -> Goal: Organize/Inform -> Accordion component -> Interaction: Click to expand/collapse -> Justification: Hides complexity, improves readability -> HTML/JS.
+        - Screenshots -> Goal: Inform -> Styled placeholder divs -> Interaction: None -> Justification: Clearly indicates where to add visuals -> HTML/Tailwind.
+        - Search -> Goal: Organize/Navigate -> Search input filtering sidebar links -> Interaction: Type to filter -> Justification: Fastest way for users to find specific topics -> HTML/JS.
+        - Theme Toggle -> Goal: Customize UI -> Interactive toggle switch -> Interaction: Click to switch theme -> Justification: Provides a consistent user experience across the entire application ecosystem -> HTML/CSS/JS.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        :root {
+            --brand-gold: #b08f57;
+            --bg-light: #f8fafc; --text-light: #1e293b; --card-light: #ffffff; --border-light: #e2e8f0; --header-light: #0f172a; --link-hover-light: #f1f5f9; --active-bg-light: #fef3c7; --active-text-light: #92400e; --muted-light: #64748b;
+        }
+
+        html.light-theme {
+            --bg-dark: var(--bg-light); --text-dark: var(--text-light); --card-dark: var(--card-light); --border-dark: var(--border-light); --header-dark: var(--header-light); --link-hover-dark: var(--link-hover-light); --active-bg-dark: var(--active-bg-light); --active-text-dark: var(--active-text-light); --muted-dark: var(--muted-light);
+        }
+
+        :root, html:not(.light-theme) {
+            --bg-dark: #111827; --text-dark: #d1d5db; --card-dark: #1f2937; --border-dark: #374151; --header-dark: #f9fafb; --link-hover-dark: #374151; --active-bg-dark: #422c09; --active-text-dark: #fef3c7; --muted-dark: #9ca3af;
+        }
+        
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-dark); color: var(--text-dark); transition: background-color 0.3s, color 0.3s; }
+        .sidebar { background-color: var(--card-dark); border-color: var(--border-dark); }
+        .sidebar h1, .main-content h2, .main-content h3 { color: var(--header-dark); }
+        .sidebar h2 { color: var(--muted-dark); }
+        .sidebar-link { color: var(--muted-dark); }
+        .sidebar-link:hover { background-color: var(--link-hover-dark); }
+        .sidebar-link.active { background-color: var(--active-bg-dark); color: var(--active-text-dark); }
+        .search-input { background-color: var(--bg-dark); border-color: var(--border-dark); }
+        .card { background-color: var(--card-dark); border-color: var(--border-dark); }
+        .accordion-header { background-color: var(--link-hover-dark); }
+        .accordion-header:hover { background-color: var(--border-dark); }
+        .accordion-content { border-color: var(--border-dark); }
+
+        .accordion-header::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; transition: transform 0.3s; }
+        .accordion-header.open::after { transform: rotate(180deg); }
+
+        .theme-switch-wrapper { display: flex; align-items: center; justify-content: space-between; padding: 10px 4px; background-color: var(--bg-dark); border-radius: 9999px; margin-top: 1.5rem; }
+        .theme-switch { display: inline-block; height: 26px; position: relative; width: 50px; }
+        .theme-switch input { display:none; }
+        .slider { background-color: #ccc; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; transition: .4s; }
+        .slider:before { background-color: #fff; bottom: 4px; content: ""; height: 18px; left: 4px; position: absolute; transition: .4s; width: 18px; }
+        input:checked + .slider { background-color: var(--brand-gold); }
+        input:checked + .slider:before { transform: translateX(24px); }
+        .slider.round { border-radius: 34px; }
+        .slider.round:before { border-radius: 50%; }
+        .theme-switch-wrapper .icon { color: var(--muted-dark); }
+        .image-placeholder { background-color: var(--link-hover-dark); border-color: var(--border-dark); color: var(--muted-dark); }
+    </style>
+</head>
+<body>
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-72 sidebar p-6 fixed h-full overflow-y-auto hidden md:block">
+            <div class="flex flex-col items-center text-center mb-8">
+                <img src="/images/barberflow+.png" alt="Logo BarberFlow+" class="w-24 h-auto mb-2 rounded-lg">
+                <h1 class="text-xl font-bold">Manual de Usuario</h1>
+            </div>
+
+            <div class="relative mb-4">
+                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="searchInput" placeholder="Buscar en el manual..." class="search-input w-full pl-9 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+            </div>
+
+            <nav id="sidebarNav">
+                 <!-- Contenido de la navegación -->
+                 <h2 class="text-xs font-bold uppercase mb-3">General</h2>
+                <a href="#introduccion" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-rocket w-5 text-center"></i> Introducción
+                </a>
+                <a href="#primeros-pasos" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-shoe-prints w-5 text-center"></i> Primeros Pasos
+                </a>
+
+                <h2 class="text-xs font-bold uppercase mt-6 mb-3">Módulos</h2>
+                <a href="#dashboard" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-tachometer-alt w-5 text-center"></i> Dashboard
+                </a>
+                <a href="#citas" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-calendar-alt w-5 text-center"></i> Citas
+                </a>
+                 <a href="#clientes" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-users w-5 text-center"></i> Clientes
+                </a>
+                 <a href="#barberos" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-cut w-5 text-center"></i> Barberos
+                </a>
+                <a href="#servicios" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-concierge-bell w-5 text-center"></i> Servicios
+                </a>
+                <a href="#inventario" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-box-open w-5 text-center"></i> Inventario
+                </a>
+                 <a href="#reportes" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-chart-line w-5 text-center"></i> Reportes
+                </a>
+                
+                <h2 class="text-xs font-bold uppercase mt-6 mb-3">Avanzado</h2>
+                <a href="#funciones-especiales" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-star w-5 text-center"></i> Funciones Especiales
+                </a>
+                 <a href="#contacto" class="sidebar-link flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors">
+                    <i class="fas fa-life-ring w-5 text-center"></i> Contacto y Soporte
+                </a>
+            </nav>
+
+            <div class="mt-auto pt-6">
+                <div class="theme-switch-wrapper">
+                    <span class="icon text-lg"><i class="fas fa-sun"></i></span>
+                    <label class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="icon text-lg"><i class="fas fa-moon"></i></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="ml-0 md:ml-72 p-6 md:p-10 w-full">
+            <div class="max-w-4xl mx-auto">
+                <section id="introduccion" class="mb-16">
+                    <h2 class="text-3xl font-bold border-b pb-4 mb-6">1. Introducción</h2>
+                    <p class="text-lg mb-4">Bienvenido a <strong>BarberFlow+</strong>, el software de gestión integral diseñado para modernizar y optimizar la administración de barberías y peluquerías.</p>
+                    <p>Este manual interactivo te guiará a través de todas las funcionalidades de la aplicación, desde la configuración inicial y la gestión diaria hasta la generación de reportes avanzados.</p>
+                </section>
+                
+                <section id="primeros-pasos" class="mb-16">
+                    <h2 class="text-3xl font-bold border-b pb-4 mb-6">2. Primeros Pasos</h2>
+                    <div class="space-y-6">
+                        <div class="card p-6 rounded-xl">
+                            <h3 class="text-xl font-semibold mb-2">2.1. Selección de Tema Visual</h3>
+                            <p class="mb-4">Al ingresar por primera vez, podrás elegir tu experiencia visual preferida entre <strong>Modo Claro</strong> y <strong>Modo Oscuro</strong>.</p>
+                            <img src="/manual_images/selector_tema.png" alt="Selector de Tema" class="w-full rounded-lg border shadow-md my-6">
+                        </div>
+                        <div class="card p-6 rounded-xl">
+                            <h3 class="text-xl font-semibold mb-2">2.2. Creación de una Cuenta y Acceso</h3>
+                            <p class="mb-4">Si eres un cliente nuevo, haz clic en "<strong>Regístrate aquí</strong>". Si ya tienes un perfil, introduce tu correo y contraseña para acceder.</p>
+                             <img src="/manual_images/crear_registro.png" alt="Crear Registro" class="w-full rounded-lg border shadow-md my-6">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="dashboard" class="mb-16">
+                    <h2 class="text-3xl font-bold border-b pb-4 mb-6">3. Módulos Principales</h2>
+                    <h3 class="text-2xl font-semibold mb-4">3.1. Dashboard (Panel Principal)</h3>
+                    <p class="mb-6">Es tu centro de control. Ofrece un resumen vital del estado de tu negocio en tiempo real.</p>
+                    <img src="/manual_images/dashboard.png" alt="Vista principal del Dashboard" class="w-full rounded-lg border shadow-md my-6">
+                     <div class="card p-6 rounded-xl mt-6">
+                        <h4 class="font-semibold text-amber-400 mb-3">Acciones Rápidas (Proceso Detallado)</h4>
+                        <p class="text-sm mb-4">Acceso directo a las operaciones más comunes. Haz clic en cada acción para expandir.</p>
+                        <div class="space-y-2 accordion-container">
+                            <div class="accordion-item"><button class="accordion-header w-full text-left font-semibold p-4 rounded-lg flex justify-between items-center transition-colors">Registrar Gasto</button><div class="accordion-content overflow-hidden max-h-0 transition-all duration-500"><div class="p-4 text-sm"><ol class="list-decimal pl-5 space-y-2"><li>Haz clic para abrir la ventana "Registrar Gasto".</li><li><strong>Descripción:</strong> Escribe un detalle claro del gasto.</li><li><strong>Monto:</strong> Ingresa el valor total.</li><li><strong>Tipo de Gasto:</strong> Selecciona una categoría (Gasto Operativo, Costo Fijo, etc.).</li><li>Haz clic en "Guardar Gasto" para registrarlo en tus finanzas.</li></ol></div></div></div>
+                            <div class="accordion-item"><button class="accordion-header w-full text-left font-semibold p-4 rounded-lg flex justify-between items-center transition-colors">Añadir Catálogo</button><div class="accordion-content overflow-hidden max-h-0 transition-all duration-500"><div class="p-4 text-sm"><ol class="list-decimal pl-5 space-y-2"><li>Usa esta opción para añadir un nuevo producto a tu inventario.</li><li>Completa los campos: Nombre, Precio de Venta, Costo de Compra y **Stock Mínimo**.</li><li>Haz clic en "Guardar Producto".</li></ol></div></div></div>
+                            <div class="accordion-item"><button class="accordion-header w-full text-left font-semibold p-4 rounded-lg flex justify-between items-center transition-colors">Añadir Stock - Compra</button><div class="accordion-content overflow-hidden max-h-0 transition-all duration-500"><div class="p-4 text-sm"><ol class="list-decimal pl-5 space-y-2"><li>Utiliza esta acción cuando recibas mercancía.</li><li><strong>Producto:</strong> Selecciona el producto del menú.</li><li><strong>Cantidad Comprada:</strong> Ingresa el número de unidades recibidas.</li><li><strong>Costo Total:</strong> Ingresa el valor total que pagaste por esa compra.</li><li>Haz clic en "Registrar Compra" para actualizar el stock.</li></ol></div></div></div>
+                            <div class="accordion-item"><button class="accordion-header w-full text-left font-semibold p-4 rounded-lg flex justify-between items-center transition-colors">Ventas de Productos</button><div class="accordion-content overflow-hidden max-h-0 transition-all duration-500"><div class="p-4 text-sm"><ol class="list-decimal pl-5 space-y-2"><li>Para registrar la venta directa de un producto.</li><li><strong>Producto:</strong> Selecciona el producto vendido.</li><li><strong>Cantidad:</strong> Ingresa el número de unidades.</li><li>Haz clic en "Confirmar" para registrar la venta y descontar el stock.</li></ol></div></div></div>
+                            <div class="accordion-item"><button class="accordion-header w-full text-left font-semibold p-4 rounded-lg flex justify-between items-center transition-colors">Registrar Consumo Interno</button><div class="accordion-content overflow-hidden max-h-0 transition-all duration-500"><div class="p-4 text-sm"><ol class="list-decimal pl-5 space-y-2"><li>Usa esta opción para dar de baja productos que se gastan durante los servicios (ej: champú, cera).</li><li><strong>Producto:</strong> Selecciona el producto consumido.</li><li><strong>Cantidad Consumida:</strong> Ingresa el número de unidades utilizadas.</li><li>Haz clic en "Registrar Consumo" para descontar las unidades del inventario.</li></ol></div></div></div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="citas" class="mb-16">
+                    <h3 class="text-2xl font-semibold mb-4">3.2. Citas (Proceso Detallado)</h3>
+                    <p class="mb-6">El corazón de tu negocio. Este módulo presenta un calendario interactivo para una gestión completa del agendamiento.</p>
+                    <img src="/manual_images/vista_ppal_calendario_citas.png" alt="Vista principal del calendario de citas" class="w-full rounded-lg border shadow-md my-6">
+                    <div class="space-y-4 accordion-container">
+                        <div class="accordion-item"><button class="accordion-header w-full text-left font-semibold p-4 rounded-lg flex justify-between items-center transition-colors">Paso 1: Visualizar y Filtrar el Calendario</button><div class="accordion-content overflow-hidden max-h-0 transition-all duration-500"><div class="p-4 text-sm border-l border-r border-b rounded-b-lg"><ol class="list-decimal pl-5 space-y-2"><li><strong>Navegación:</strong> Al entrar al módulo, verás un calendario semanal. Usa los botones para moverte a semanas anteriores o posteriores.</li><li><strong>Filtrar por Barbero:</strong> En la parte superior, usa el menú desplegable <strong>"Ver Calendario de:"</strong> para ver la agenda de un barbero específico.</li></ol></div></div></div>
+                        <div class="accordion-item"><button class="accordion-header w-full text-left font-semibold p-4 rounded-lg flex justify-between items-center transition-colors">Paso 2: Crear una Nueva Cita</button><div class="accordion-content overflow-hidden max-h-0 transition-all duration-500"><div class="p-4 text-sm border-l border-r border-b rounded-b-lg"><ol class="list-decimal pl-5 space-y-2"><li><strong>Seleccionar Horario:</strong> Haz clic en un espacio de tiempo vacío del calendario. Esto abrirá el formulario "Nueva Cita".</li><li><strong>Completar Formulario:</strong> Rellena los campos Cliente, Barbero, Servicio, Fecha/Hora y Duración.</li><li><strong>Guardar:</strong> Haz clic en <strong>"Guardar Cita"</strong>. La nueva cita aparecerá en el calendario.</li></ol><img src="/manual_images/nueva_cita.png" alt="Nueva Cita" class="w-full rounded-lg border shadow-md my-6"></div></div></div>
+                        <div class="accordion-item"><button class="accordion-header w-full text-left font-semibold p-4 rounded-lg flex justify-between items-center transition-colors">Paso 3: Gestionar una Cita Existente</button><div class="accordion-content overflow-hidden max-h-0 transition-all duration-500"><div class="p-4 text-sm border-l border-r border-b rounded-b-lg"><p class="mb-2">Haz clic sobre cualquier cita ya agendada. Se abrirá la ventana "Detalle de la Cita" donde podrás:</p><ul class="list-disc pl-5 space-y-2"><li><strong>Registrar Pago:</strong> Abre la ventana de pago para confirmar la transacción. El color de la cita cambiará.</li><li><strong>Cancelar Cita:</strong> Anula la cita. Podrás añadir un motivo. La cita se volverá gris.</li></ul><img src="/manual_images/detalle_cita.png" alt="Detalle de la Cita" class="w-full rounded-lg border shadow-md my-6"></div></div></div>
+                    </div>
+                </section>
+                
+                 <!-- Otras secciones de módulos -->
+                <section id="clientes" class="mb-16"><h3 class="text-2xl font-semibold mb-4">3.3. Clientes</h3><p class="mb-4">Gestiona tu base de datos de clientes, añade nuevos y consulta su historial completo en la Vista 360.</p><img src="/manual_images/gestion_clientes.png" alt="Gestion Clientes" class="w-full rounded-lg border shadow-md my-6"></section>
+                <section id="barberos" class="mb-16"><h3 class="text-2xl font-semibold mb-4">3.4. Barberos</h3><p class="mb-4">Administra tu equipo, sus datos y sus métodos de pago.</p><img src="/manual_images/barberos.png" alt="Listado de Barberos" class="w-full rounded-lg border shadow-md my-6"></section>
+                <section id="servicios" class="mb-16"><h3 class="text-2xl font-semibold mb-4">3.5. Servicios</h3><p class="mb-4">Define tu catálogo de servicios y precios.</p><img src="/manual_images/servicios.png" alt="Listado de Servicios" class="w-full rounded-lg border shadow-md my-6"></section>
+                <section id="inventario" class="mb-16"><h3 class="text-2xl font-semibold mb-4">3.6. Inventario</h3><p class="mb-4">Controla tus productos, gestiona el stock y visualiza reportes.</p><img src="/manual_images/inventario.png" alt="Reporte de Inventario" class="w-full rounded-lg border shadow-md my-6"></section>
+                <section id="reportes" class="mb-16"><h3 class="text-2xl font-semibold mb-4">3.7. Reportes</h3><p class="mb-4">Analiza el rendimiento con reportes detallados de Ventas, Gastos, Cancelaciones y Liquidaciones, todos exportables.</p><img src="/manual_images/reportes.png" alt="Vista del Módulo de Reportes" class="w-full rounded-lg border shadow-md my-6"></section>
+
+                <section id="funciones-especiales" class="mb-16">
+                    <h2 class="text-3xl font-bold border-b pb-4 mb-6">4. Funciones Especiales</h2>
+                     <div class="card p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-2">4.1. Asistente OpenAI (Proceso Detallado)</h3>
+                        <div class="space-y-4 text-sm">
+                            <p>El ícono 🤖 te da acceso a un asistente de IA para "conversar" con tus datos. Haz preguntas en lenguaje normal y obtén respuestas precisas sin navegar por menús.</p>
+                             <img src="/manual_images/openai.png" alt="Ventana del Asistente OpenAI" class="w-full rounded-lg border shadow-md my-6">
+                            <div>
+                                <h4 class="font-semibold text-amber-400 mb-2">El Proceso Técnico (Paso a Paso)</h4>
+                                <ol class="list-decimal pl-5 space-y-2">
+                                    <li><strong>Tu Pregunta:</strong> Escribes tu consulta en lenguaje natural (ej: "ingresos de ayer").</li>
+                                    <li><strong>Traducción Inteligente:</strong> Tu pregunta se envía a un modelo avanzado de IA que actúa como un programador experto. Este "programador" conoce la estructura de tu base de datos y traduce tu pregunta a un código de consulta técnico y preciso (SQL).</li>
+                                    <li><strong>Verificación de Seguridad:</strong> Antes de ejecutar nada, BarberFlow+ revisa el código SQL generado por la IA. Se asegura de que sea una consulta de **solo lectura** (`SELECT`). Cualquier intento de modificar o borrar datos (`UPDATE`, `DELETE`, etc.) es bloqueado automáticamente. **Tus datos están siempre seguros.**</li>
+                                    <li><strong>Ejecución y Resultados:</strong> Una vez verificada, la consulta segura se ejecuta en tu base de datos y los resultados se muestran en una tabla clara.</li>
+                                </ol>
+                            </div>
+                             <div>
+                                <h4 class="font-semibold text-amber-400 mb-2 mt-4">Ejemplos de Consultas que Puedes Realizar</h4>
+                                <div class="bg-gray-800 p-4 rounded-lg font-mono text-xs text-gray-300">
+                                    <p class="text-gray-400">// Sobre Citas y Agenda:</p>
+                                    <p>"Muéstrame las citas para mañana"</p>
+                                    <p>"¿Cuántas citas atendió el barbero Juan Pérez la semana pasada?"</p>
+                                    <br>
+                                    <p class="text-gray-400">// Sobre Clientes:</p>
+                                    <p>"Encuentra el número de teléfono del cliente Carlos Rivas"</p>
+                                    <p>"¿Qué clientes cumplen años esta semana?"</p>
+                                    <br>
+                                    <p class="text-gray-400">// Sobre Finanzas:</p>
+                                    <p>"¿Cuál fue el total de ingresos del día de ayer?"</p>
+                                    <p>"Lista de los pagos realizados hoy con Nequi"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="card p-6 rounded-xl mt-6">
+                        <h3 class="text-xl font-semibold mb-2">4.2. Notificaciones Automáticas</h3>
+                        <p>El sistema envía automáticamente recordatorios de citas, confirmaciones de pago y felicitaciones de cumpleaños.</p>
+                    </div>
+                </section>
+                
+                <section id="contacto" class="mb-16">
+                    <h2 class="text-3xl font-bold border-b pb-4 mb-6">5. Contacto y Soporte</h2>
+                    <div style="background-color: var(--brand-gold);" class="text-white p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-2">BarberFlow+</h3>
+                        <p class="opacity-80 mb-4">Gestión de Barberías y Peluquerías</p>
+                        <p><strong>Desarrollado por:</strong> Ing. Paul Ossa Rendon</p>
+                        <p><strong>Celular:</strong> +57 3226713089</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarNav = document.getElementById('sidebarNav');
+            const searchInput = document.getElementById('searchInput');
+            const sidebarLinks = sidebarNav.querySelectorAll('.sidebar-link');
+            const sections = document.querySelectorAll('main section');
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            const themeToggle = document.getElementById('theme-toggle');
+
+            const applyTheme = (theme) => {
+                if (theme === 'light') {
+                    document.documentElement.classList.add('light-theme');
+                    themeToggle.checked = false;
+                } else {
+                    document.documentElement.classList.remove('light-theme');
+                    themeToggle.checked = true;
+                }
+            };
+
+            themeToggle.addEventListener('change', () => {
+                const newTheme = themeToggle.checked ? 'dark' : 'light';
+                localStorage.setItem('theme', newTheme);
+                applyTheme(newTheme);
+            });
+
+            applyTheme(localStorage.getItem('theme') || 'dark');
+            
+            accordionHeaders.forEach(header => {
+                if(header.classList.contains('open')) {
+                    const content = header.nextElementSibling;
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+
+            function updateActiveLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            sidebarNav.addEventListener('click', (e) => {
+                const link = e.target.closest('a');
+                if (link) {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        window.scrollTo({ top: targetSection.offsetTop - 20, behavior: 'smooth' });
+                    }
+                }
+            });
+            
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                sidebarLinks.forEach(link => {
+                    link.style.display = link.textContent.toLowerCase().includes(searchTerm) ? 'flex' : 'none';
+                });
+            });
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    header.classList.toggle('open');
+                    content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+                });
+            });
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink();
+        });
+    </script>
+</body>
+</html>
+

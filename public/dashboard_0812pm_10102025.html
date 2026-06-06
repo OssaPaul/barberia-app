@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberFlow+</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- CAMBIO: Importación de nueva fuente "Inter" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        (function() {
+            const savedThemeClass = localStorage.getItem('theme');
+            if (savedThemeClass) {
+                document.documentElement.className = savedThemeClass;
+            }
+        })();
+    </script>
+    
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+    
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header"><img src="" alt="Logo" class="logo" id="sidebar-logo"> <h2 id="sidebar-title">Cargando...</h2></div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active admin-only"><a href="#" id="nav-dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#" id="nav-citas"><i class="fas fa-calendar-alt"></i> Citas</a></li>
+                    <li class="admin-only"><a href="#" id="nav-clients"><i class="fas fa-users"></i> Clientes</a></li>
+                    <li class="admin-only"><a href="#" id="nav-barbers"><i class="fas fa-cut"></i> Barberos</a></li>
+                    <li class="admin-only"><a href="#" id="nav-services"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
+                    <li class="admin-only"><a href="#" id="nav-inventory"><i class="fas fa-box-open"></i> Inventario</a></li>
+                    <li class="admin-only"><a href="#" id="nav-reports"><i class="fas fa-chart-line"></i> Reportes</a></li>
+                    <li><a href="manual_interactivo.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-question-circle"></i> Manual de Usuario</a></li>
+                </ul>
+            </nav>
+            <footer class="app-footer">
+                <div class="footer-logo">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="footer-text">
+                    <p class="app-name">BarberFlow+</p>
+                    <p class="developer-info">Por: Ing. Paul Ossa Rendon</p>
+                </div>
+            </footer>
+            <div class="sidebar-footer"><button class="logout-button" id="logout-button"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button></div>
+        </aside>
+
+        <main class="main-content">
+            <div id="view-dashboard" class="admin-only">
+                <header><h1>Resumen del Día</h1><p>Bienvenido.</p></header>
+                <section class="kpi-cards">
+                    <div class="card"><div class="card-icon ingresos"><i class="fas fa-dollar-sign"></i></div><div class="card-info"><p>Ingresos del Día</p><h3 id="kpi-ingresos">$0.00</h3></div></div>
+                    <div class="card"><div class="card-icon gastos"><i class="fas fa-receipt"></i></div><div class="card-info"><p>Gastos del Día</p><h3 id="kpi-gastos">$0.00</h3></div></div>
+                    <div class="card"><div class="card-icon utilidad"><i class="fas fa-wallet"></i></div><div class="card-info"><p>Utilidad del Día</p><h3 id="kpi-utilidad">$0.00</h3></div></div>
+                    <div class="card"><div class="card-icon citas"><i class="fas fa-clock"></i></div><div class="card-info"><p>Citas de Hoy</p><h3 id="kpi-citas">0</h3></div></div>
+                </section>
+                <section class="main-grid">
+                    
+                    <div class="financial-summary-container card">
+                        <h4>Resumen Financiero</h4>
+                        <div class="summary-columns">
+                            <div class="summary-column">
+                                <h5>
+                                    <span><i class="fas fa-store green-icon"></i> Ingresos</span>
+                                    <span class="summary-header-label">BARBERIA</span>
+                                </h5>
+                                <ul id="summary-ingresos-barberia-lista"></ul>
+                                <p class="summary-total" id="summary-ingresos-semana-barberia">TOTALES SEMANA: $0</p>
+                                <p class="summary-total month-total" id="summary-ingresos-mes-barberia">TOTALES MES: $0</p>
+                            </div>
+                            <div class="summary-column">
+                                <h5>
+                                    <span><i class="fas fa-cut green-icon"></i> Ingresos</span>
+                                    <span class="summary-header-label">BARBEROS</span>
+                                </h5>
+                                <ul id="summary-ingresos-barberos-lista"></ul>
+                                <p class="summary-total" id="summary-ingresos-semana-barberos">TOTALES SEMANA: $0</p>
+                                <p class="summary-total month-total" id="summary-ingresos-mes-barberos">TOTALES MES: $0</p>
+                            </div>
+                        </div>
+                        <div class="summary-expenses-total">
+                            <p id="summary-gastos-semana">Gastos Semana: $0</p>
+                            <p id="summary-gastos-mes">Gastos Mes: $0</p>
+                        </div>
+                    </div>
+                    <div class="side-panel">
+                        <div class="low-stock-alert card"><h4><i class="fas fa-exclamation-triangle"></i> Alerta de Bajo Inventario</h4><ul id="low-stock-list"></ul></div>
+                        <div class="quick-actions card"><h4>Acciones Rápidas</h4><button id="btn-open-modal-gasto"><i class="fas fa-plus-circle"></i> Registrar Gasto</button><button id="btn-open-modal-producto"><i class="fas fa-box"></i> Añadir Catálogo</button><button id="btn-open-modal-compra"><i class="fas fa-dolly"></i> Añadir Stock - Compra</button><button id="btn-open-modal-consumo"><i class="fas fa-cash-register"></i> Ventas</button><button id="btn-open-modal-consumo-interno"><i class="fas fa-clipboard-check"></i> Registrar Consumo Interno</button></div>
+                    </div>
+                </section>
+            </div>
+            
+            <div id="view-citas" style="display: none;">
+                <header><h1>Agendamiento de Citas</h1></header>
+                <div class="calendar-header">
+                    <div>
+                        <label for="barbero-filter">Ver Calendario de:</label>
+                        <select id="barbero-filter"><option value="">Todos los Barberos</option></select>
+                    </div>
+                </div>
+                <div class="card"><div id='calendar'></div></div>
+            </div>
+
+            <div id="view-inventory" style="display: none;" class="admin-only">
+                <header class="report-header"><h1>Reporte de Inventario</h1><div class="export-buttons"><button id="export-pdf"><i class="fas fa-file-pdf"></i> Exportar a PDF</button><button id="export-excel"><i class="fas fa-file-excel"></i> Exportar a Excel</button></div></header>
+                <div class="card"><table class="table-container" id="inventory-table"><thead><tr><th>Producto</th><th>Stock Actual</th><th>Stock Mínimo</th><th>Precio de Venta</th><th>Costo de Compra</th><th>Valor Total (Venta)</th></tr></thead><tbody id="inventory-body"></tbody></table></div>
+            </div>
+
+            <div id="view-clients" style="display: none;" class="admin-only">
+                <header class="report-header"><h1>Gestión de Clientes</h1><button id="btn-nuevo-cliente" class="btn-primary"><i class="fas fa-plus"></i> Nuevo Cliente</button></header>
+                <div class="card"><table class="table-container" id="clients-table"><thead><tr><th>Nombre</th><th>Teléfono</th><th>Email</th><th>Acciones</th></tr></thead><tbody id="clients-body"></tbody></table></div>
+            </div>
+
+            <div id="view-client-detail" style="display: none;" class="admin-only">
+                <header class="report-header"><h1 id="client-detail-name"></h1><button id="btn-back-to-clients" class="btn-primary"><i class="fas fa-arrow-left"></i> Volver a la Lista</button></header>
+                <div class="client-detail-grid">
+                    <div class="card"><h4 class="detail-title">Detalles del Cliente</h4><div id="client-detail-info"></div><button id="btn-edit-client-from-detail" class="btn-primary" style="margin-top: 20px;"><i class="fas fa-edit"></i> Editar Datos</button></div>
+                    <div class="card"><h4 class="detail-title">Historial de Citas</h4><ul id="client-detail-citas" class="detail-list"></ul></div>
+                    <div class="card client-gallery"><h4 class="detail-title">Galería de Transformación</h4><div class="photo-container"><div class="photo-upload"><h5>Foto Antes</h5><img id="foto-antes-img" src="placeholder.png" alt="Foto Antes"><input type="file" id="foto-antes-input" accept="image/*"><button class="btn-upload" data-tipo="antes">Subir</button></div><div class="photo-upload"><h5>Foto Después</h5><img id="foto-despues-img" src="placeholder.png" alt="Foto Después"><input type="file" id="foto-despues-input" accept="image/*"><button class="btn-upload" data-tipo="despues">Subir</button></div></div></div>
+                </div>
+            </div>
+
+            <div id="view-barbers" style="display: none;" class="admin-only">
+                <header class="report-header"><h1>Gestión de Barberos</h1><button id="btn-nuevo-barbero" class="btn-primary"><i class="fas fa-plus"></i> Nuevo Barbero</button></header>
+                <div class="card"><table class="table-container" id="barbers-table"><thead><tr><th>Foto</th><th>Nombre</th><th>Celular</th><th>Tipo de Pago</th><th>Acciones</th></tr></thead><tbody id="barbers-body"></tbody></table></div>
+            </div>
+
+            <div id="view-services" style="display: none;" class="admin-only">
+                <header class="report-header"><h1>Gestión de Servicios</h1><button id="btn-nuevo-servicio" class="btn-primary"><i class="fas fa-plus"></i> Nuevo Servicio</button></header>
+                <div class="card"><table class="table-container" id="services-table"><thead><tr><th>Nombre del Servicio</th><th>Precio</th><th>Acciones</th></tr></thead><tbody id="services-body"></tbody></table></div>
+            </div>
+
+            <div id="view-reports" style="display: none;" class="admin-only">
+                <header><h1>Módulo de Reportes</h1></header>
+                <div class="report-selector">
+                    <button class="btn-primary active" data-report="ventas">Ventas</button>
+                    <button class="btn-primary" data-report="gastos">Gastos</button>
+                    <button class="btn-primary" data-report="cancelaciones">Cancelaciones</button>
+                    <button class="btn-primary" data-report="liquidacion">Liquidaciones</button>
+                </div>
+                <div class="report-panels">
+                    <div id="panel-reporte-ventas" class="report-panel active">
+                        <div class="card">
+                            <div class="report-filters">
+                                <div class="form-group"><label for="ventas-fecha-inicio">Fecha Inicio</label><input type="date" id="ventas-fecha-inicio"></div>
+                                <div class="form-group"><label for="ventas-fecha-fin">Fecha Fin</label><input type="date" id="ventas-fecha-fin"></div>
+                                <button id="btn-generar-reporte-ventas" class="btn-primary">Generar</button>
+                                <div id="export-buttons-ventas" class="export-buttons-group" style="display:none;"><button class="btn-icon" title="Exportar a PDF" onclick="exportarReportePDF('tabla-reporte-ventas', 'Reporte_Ventas')"><i class="fas fa-file-pdf"></i></button><button class="btn-icon" title="Exportar a Excel" onclick="exportarReporteExcel('tabla-reporte-ventas', 'Reporte_Ventas')"><i class="fas fa-file-excel"></i></button></div>
+                            </div>
+                            <table class="table-container" id="tabla-reporte-ventas">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Barbero</th>
+                                        <th>Cliente</th>
+                                        <th>Servicios</th>
+                                        <th>Valor</th>
+                                        <th class="admin-only">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="body-reporte-ventas"><tr><td colspan="6">Seleccione un rango de fechas.</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="panel-reporte-gastos" class="report-panel">
+                        <div class="card">
+                            <div class="report-filters">
+                                <div class="form-group"><label for="gastos-fecha-inicio">Fecha Inicio</label><input type="date" id="gastos-fecha-inicio"></div>
+                                <div class="form-group"><label for="gastos-fecha-fin">Fecha Fin</label><input type="date" id="gastos-fecha-fin"></div>
+                                <button id="btn-generar-reporte-gastos" class="btn-primary">Generar</button>
+                                <div id="export-buttons-gastos" class="export-buttons-group" style="display:none;"><button class="btn-icon" title="Exportar a PDF" onclick="exportarReportePDF('tabla-reporte-gastos', 'Reporte_Gastos')"><i class="fas fa-file-pdf"></i></button><button class="btn-icon" title="Exportar a Excel" onclick="exportarReporteExcel('tabla-reporte-gastos', 'Reporte_Gastos')"><i class="fas fa-file-excel"></i></button></div>
+                            </div>
+                            <table class="table-container" id="tabla-reporte-gastos">
+                                <thead><tr><th>Fecha</th><th>Descripción</th><th>Tipo</th><th>Monto</th></tr></thead>
+                                <tbody id="body-reporte-gastos"><tr><td colspan="4">Seleccione un rango de fechas.</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="panel-reporte-cancelaciones" class="report-panel">
+                         <div class="card">
+                            <div class="report-filters">
+                                <div class="form-group"><label for="cancel-fecha-inicio">Fecha Inicio</label><input type="date" id="cancel-fecha-inicio"></div>
+                                <div class="form-group"><label for="cancel-fecha-fin">Fecha Fin</label><input type="date" id="cancel-fecha-fin"></div>
+                                <button id="btn-generar-reporte-cancel" class="btn-primary">Generar</button>
+                                <div id="export-buttons-cancel" class="export-buttons-group" style="display:none;"><button class="btn-icon" title="Exportar a PDF" onclick="exportarReportePDF('tabla-reporte-cancel', 'Reporte_Cancelaciones')"><i class="fas fa-file-pdf"></i></button><button class="btn-icon" title="Exportar a Excel" onclick="exportarReporteExcel('tabla-reporte-cancel', 'Reporte_Cancelaciones')"><i class="fas fa-file-excel"></i></button></div>
+                            </div>
+                            <table class="table-container" id="tabla-reporte-cancel">
+                                <thead><tr><th>Fecha Cancelación</th><th>Fecha Cita</th><th>Cliente</th><th>Barbero</th><th>Motivo</th></tr></thead>
+                                <tbody id="body-reporte-cancel"><tr><td colspan="5">Seleccione un rango de fechas.</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="panel-reporte-liquidacion" class="report-panel">
+                        <div class="card">
+                            <div class="report-filters">
+                                <div class="form-group"><label for="liq-fecha-inicio">Fecha Inicio</label><input type="date" id="liq-fecha-inicio"></div>
+                                <div class="form-group"><label for="liq-fecha-fin">Fecha Fin</label><input type="date" id="liq-fecha-fin"></div>
+                                <div class="form-group"><label for="liq-barbero-select">Barbero</label><select id="liq-barbero-select"><option value="todos">Todos los Barberos</option></select></div>
+                                <button id="btn-generar-reporte-liq" class="btn-primary">Generar</button>
+                                <div id="export-buttons-liq" class="export-buttons-group" style="display:none;"><button class="btn-icon" title="Exportar a PDF" onclick="exportarReportePDF('tabla-reporte-liq', 'Reporte_Liquidacion')"><i class="fas fa-file-pdf"></i></button><button class="btn-icon" title="Exportar a Excel" onclick="exportarReporteExcel('tabla-reporte-liq', 'Reporte_Liquidacion')"><i class="fas fa-file-excel"></i></button></div>
+                            </div>
+                            <table class="table-container" id="tabla-reporte-liq">
+                                <thead><tr><th>Barbero</th><th>Ingresos Generados</th><th>% Comisión</th><th>Valor a Pagar</th></tr></thead>
+                                <tbody id="body-reporte-liq"><tr><td colspan="4">Seleccione un rango de fechas y un barbero.</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal" id="modal-gasto"><div class="modal-content"><span class="close-button">&times;</span><h3><i class="fas fa-receipt"></i> Registrar Gasto</h3><form id="form-gasto"><div class="form-group"><label for="gasto-descripcion">Descripción</label><input type="text" id="gasto-descripcion" required></div><div class="form-group"><label for="gasto-monto">Monto</label><input type="number" step="0.01" id="gasto-monto" required></div><div class="form-group"><label for="gasto-tipo">Tipo de Gasto</label><select id="gasto-tipo" required><option value="gasto_operativo">Gasto Operativo</option><option value="costo_fijo">Costo Fijo</option><option value="costo_variable">Costo Variable</option></select></div><button type="submit">Guardar Gasto</button></form></div></div>
+    <div class="modal" id="modal-producto"><div class="modal-content"><span class="close-button">&times;</span><h3><i class="fas fa-box"></i> Añadir Producto</h3><form id="form-producto"><div class="form-group"><label for="producto-nombre">Nombre del Producto</label><input type="text" id="producto-nombre" required></div><div class="form-group"><label for="producto-precio">Precio de Venta</label><input type="number" step="0.01" id="producto-precio" required></div><div class="form-group"><label for="producto-costo">Costo de Compra</label><input type="number" step="0.01" id="producto-costo" required></div><div class="form-group"><label for="producto-stock">Stock Mínimo</label><input type="number" id="producto-stock" required></div><button type="submit">Guardar Producto</button></form></div></div>
+    <div class="modal" id="modal-compra"><div class="modal-content"><span class="close-button">&times;</span><h3><i class="fas fa-dolly"></i> Añadir Stock - Compra</h3><form id="form-compra"><div class="form-group"><label for="compra-producto">Producto</label><select id="compra-producto" required><option value="">Cargando...</option></select></div><div class="form-group"><label for="compra-cantidad">Cantidad Comprada</label><input type="number" id="compra-cantidad" min="1" required></div><div class="form-group"><label for="compra-costo">Costo Total</label><input type="number" step="0.01" id="compra-costo" required></div><button type="submit">Registrar Compra</button></form></div></div>
+    <div class="modal" id="modal-consumo"><div class="modal-content"><span class="close-button">&times;</span><h3><i class="fas fa-cash-register"></i> Ventas</h3><form id="form-consumo"><div class="form-group"><label for="consumo-producto">Producto</label><select id="consumo-producto" required><option value="">Cargando...</option></select></div><div class="form-group"><label for="consumo-cantidad">Cantidad</label><input type="number" id="consumo-cantidad" min="1" required></div><button type="submit">Confirmar</button></form></div></div>
+    <div class="modal" id="modal-consumo-interno"><div class="modal-content"><span class="close-button">&times;</span><h3><i class="fas fa-clipboard-check"></i> Registrar Consumo Interno</h3><form id="form-consumo-interno"><div class="form-group"><label for="consumo-interno-producto">Producto</label><select id="consumo-interno-producto" required><option value="">Cargando...</option></select></div><div class="form-group"><label for="consumo-interno-cantidad">Cantidad Consumida</label><input type="number" id="consumo-interno-cantidad" min="1" required></div><button type="submit">Registrar Consumo</button></form></div></div>
+    <div class="modal" id="modal-cliente"><div class="modal-content"><span class="close-button">&times;</span><h3 id="modal-cliente-titulo">Nuevo Cliente</h3><form id="form-cliente"><input type="hidden" id="cliente-id"><div class="form-group"><label for="cliente-nombre">Nombre</label><input type="text" id="cliente-nombre" required></div><div class="form-group"><label for="cliente-apellido">Apellido</label><input type="text" id="cliente-apellido" required></div><div class="form-group"><label for="cliente-telefono">Teléfono</label><input type="tel" id="cliente-telefono" required></div><div class="form-group"><label for="cliente-email">Email</label><input type="email" id="cliente-email"></div><div class="form-group"><label for="cliente-fecha-nacimiento">Fecha de Nacimiento</label><input type="date" id="cliente-fecha-nacimiento"></div><div class="form-group"><label for="cliente-notas">Notas</label><textarea id="cliente-notas" rows="3"></textarea></div><button type="submit">Guardar Cliente</button></form></div></div>
+    <div class="modal" id="modal-barbero"><div class="modal-content"><span class="close-button">&times;</span><h3 id="modal-barbero-titulo">Nuevo Barbero</h3><form id="form-barbero"><input type="hidden" id="barbero-id"><div class="form-group"><label for="barbero-nombre">Nombre</label><input type="text" id="barbero-nombre" required></div><div class="form-group"><label for="barbero-apellido">Apellido</label><input type="text" id="barbero-apellido" required></div><div class="form-group"><label for="barbero-celular">Celular</label><input type="tel" id="barbero-celular"></div><div class="form-group"><label for="barbero-email">Email</label><input type="email" id="barbero-email"></div><div class="form-group"><label for="barbero-tipo-pago">Tipo de Pago</label><select id="barbero-tipo-pago"><option value="comision">Comisión</option><option value="arrendamiento">Arrendamiento</option></select></div><div class="form-group"><label for="barbero-valor">Valor (% o COP)</label><input type="number" step="0.01" id="barbero-valor"></div><div class="form-group"><label for="barbero-foto">Foto</label><input type="file" id="barbero-foto" accept="image/*"></div><button type="submit">Guardar Barbero</button></form></div></div>
+    <div class="modal" id="modal-servicio"><div class="modal-content"><span class="close-button">&times;</span><h3 id="modal-servicio-titulo"></h3><form id="form-servicio"><input type="hidden" id="servicio-id"><div class="form-group"><label for="servicio-nombre">Nombre del Servicio</label><input type="text" id="servicio-nombre" required></div><div class="form-group"><label for="servicio-precio">Precio</label><input type="number" step="0.01" id="servicio-precio" required></div><button type="submit" id="servicio-submit-button"></button></form></div></div>
+    <div class="modal" id="modal-cita"><div class="modal-content"><span class="close-button">&times;</span><h3 id="modal-cita-titulo">Nueva Cita</h3><form id="form-cita"><input type="hidden" id="cita-id"><div class="form-group"><label for="cita-cliente">Cliente</label><select id="cita-cliente" required></select></div><div class="form-group"><label for="cita-barbero">Barbero</label><select id="cita-barbero" required></select></div><div class="form-group"><label for="cita-servicio">Servicio</label><select id="cita-servicio" required><option value="">Cargando...</option></select></div><div class="form-group"><label for="cita-fecha">Fecha y Hora de Inicio</label><input type="datetime-local" id="cita-fecha" required></div><div class="form-group"><label for="cita-duracion">Duración (minutos)</label><input type="number" id="cita-duracion" value="30" step="15" required></div><button type="submit">Guardar Cita</button></form></div></div>
+    <div class="modal" id="modal-cita-detalle"><div class="modal-content"><span class="close-button">&times;</span><h3><i class="fas fa-calendar-check"></i> Detalle de la Cita</h3><div id="detalle-cita-info"><p><strong>Cliente:</strong> <span id="detalle-cliente-nombre"></span></p><p><strong>Barbero:</strong> <span id="detalle-barbero-nombre"></span></p><p><strong>Estado:</strong> <span id="detalle-cita-estado"></span></p></div><h4>Servicios</h4><ul id="detalle-cita-servicios"></ul><div id="detalle-cita-total">Total: $0</div><div id="detalle-cita-acciones" style="margin-top: 20px;"><button id="btn-registrar-pago" class="btn-primary">Registrar Pago</button><button id="btn-cancelar-cita" class="btn-danger"><i class="fas fa-ban"></i> Cancelar Cita</button></div></div></div>
+    <div class="modal" id="modal-pago"><div class="modal-content"><span class="close-button">&times;</span><h3><i class="fas fa-money-bill-wave"></i> Registrar Pago</h3><form id="form-pago"><input type="hidden" id="pago-cita-id"><div class="form-group"><label>Monto a Pagar</label><input type="text" id="pago-monto" readonly style="background-color: #222; font-weight: bold; color: var(--gold-primary);"></div><div class="form-group"><label for="pago-metodo">Método de Pago</label><select id="pago-metodo" required><option value="Efectivo">Efectivo</option><option value="Nequi">Nequi</option><option value="Bancolombia">Bancolombia</option><option value="Davivienda">Davivienda</option></select></div><button type="submit">Confirmar Pago</button></form></div></div>
+    <div class="modal" id="modal-liquidacion"><div class="modal-content"><span class="close-button">&times;</span><h3><i class="fas fa-calculator"></i> Liquidar Comisiones</h3><form id="form-liquidacion"><input type="hidden" id="liquidacion-barbero-id"><div class="report-filters"><div class="form-group"><label for="liquidacion-fecha-inicio">Fecha Inicio</label><input type="date" id="liquidacion-fecha-inicio" required></div><div class="form-group"><label for="liquidacion-fecha-fin">Fecha Fin</label><input type="date" id="liquidacion-fecha-fin" required></div></div><button type="submit">Calcular</button></form><div id="liquidacion-resultado" style="margin-top: 20px;"></div></div></div>
+    <div class="modal" id="modal-cancelar-cita"><div class="modal-content"><span class="close-button">&times;</span><h3><i class="fas fa-ban"></i> Cancelar Cita</h3><form id="form-cancelar-cita"><input type="hidden" id="cancelar-cita-id"><div class="form-group"><label for="cancelar-motivo">Motivo de la Cancelación (opcional)</label><textarea id="cancelar-motivo" rows="4"></textarea></div><button type="submit" class="btn-danger">Confirmar Cancelación</button></form></div></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+
+    <button id="openai-float-button" class="admin-only" title="Asistente OpenAI 🤖">🤖</button>
+
+    <div id="openai-modal-overlay" class="modal-overlay"></div>
+    <div id="openai-modal" class="modal">
+      <div class="modal-content">
+        <span id="openai-close" class="close-button">&times;</span>
+        <h3>Asistente OpenAI 🤖</h3>
+        <p style="text-align:center; color: var(--text-secondary); margin-bottom:15px;">
+          Escribe tu consulta en lenguaje natural y obtén resultados de tu base de datos.
+        </p>
+        <div class="form-group">
+          <textarea id="openai-question" placeholder="Ejemplo: Muéstrame las citas agendadas esta semana"></textarea>
+        </div>
+        <button id="openai-ask-button">Consultar OpenAI</button>
+        <div id="openai-status"></div>
+        <div id="openai-results-container"></div>
+      </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberFlow+ - Acceso</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        (function() {
+            const savedThemeClass = localStorage.getItem('theme');
+            if (savedThemeClass) {
+                document.documentElement.className = savedThemeClass;
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div id="initial-setup-container">
+        <div class="selector-box">
+            <img src="/images/barberflow+.png" alt="Logo BarberFlow+" class="selector-logo">
+            <h1>BIENVENIDO</h1>
+            
+            <div id="barberia-selection-area">
+                <p>Para comenzar, selecciona tu barbería</p>
+                <div class="barberia-select-wrapper">
+                    <select id="barberia-select">
+                        <option value="">Cargando barberías...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="theme-selection-area" style="display: none;">
+                <p>Elige tu experiencia visual preferida</p>
+                <div class="theme-main-buttons">
+                    <button id="select-light-mode">☀️ Modo Claro</button>
+                    <button id="select-dark-mode">🌙 Modo Oscuro</button>
+                </div>
+                <div id="color-options-container" style="display: none;">
+                    <p class="color-prompt">Ahora, elige tu paleta de colores:</p>
+                    <div class="theme-color-buttons">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" style="display: none;">
+        <div class="login-container" id="login-container">
+            <img src="" alt="Logo" class="logo" id="login-logo">
+            <h2 id="login-title">Acceso al Sistema</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" id="login-button">Ingresar</button>
+                <p id="error-message" class="error-message"></p>
+            </form>
+            <p class="toggle-link">¿No tienes una cuenta? <a href="#" id="show-register">Regístrate aquí</a></p>
+            <!-- CAMBIO: Nuevo enlace para cambiar de barbería -->
+            <p class="change-barberia-link"><a href="#" id="change-barberia"><i class="fas fa-store"></i> Elegir otra barbería</a></p>
+        </div>
+
+        <div class="login-container" id="register-container" style="display: none;">
+            <h2 id="register-title">Crear una Cuenta</h2>
+            <form id="register-form">
+                <div class="input-group-row">
+                    <div class="input-group"><input type="text" id="register-nombre" placeholder="Nombre" required></div>
+                    <div class="input-group"><input type="text" id="register-apellido" placeholder="Apellido" required></div>
+                </div>
+                <div class="input-group"><input type="email" id="register-email" placeholder="Correo Electrónico" required></div>
+                <div class="input-group-row">
+                    <div class="input-group"><input type="password" id="register-password" placeholder="Contraseña" required></div>
+                    <div class="input-group"><input type="password" id="register-confirm-password" placeholder="Confirmar Contraseña" required></div>
+                </div>
+                 <div class="input-group-row">
+                    <div class="input-group"><input type="tel" id="register-telefono" placeholder="Teléfono (Opcional)"></div>
+                    <div class="input-group"><input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="register-fecha-nacimiento" placeholder="Fecha Nacimiento (Opcional)"></div>
+                </div>
+                <button type="submit" id="register-button">Registrarme</button>
+                <p id="register-error-message" class="error-message"></p>
+            </form>
+            <p class="toggle-link">¿Ya tienes una cuenta? <a href="#" id="show-login">Inicia sesión</a></p>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <p>
+            <strong>BarberFlow+</strong> (Gestión de Barberías y Peluquerías) | Desarrollado por: Ing. Paul Ossa Rendon (+57 3226713089)
+        </p>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="theme.js"></script> 
+    <script src="app_login.js"></script>
+</body>
+</html>
+
